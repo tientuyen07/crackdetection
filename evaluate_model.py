@@ -114,6 +114,7 @@ for i in range(0,len(filenames)):
     for box in y_pred_decoded[i]:
         if (box[1] >= 0.65):
             label = 'Predicted - {}: {:.2f}'.format(classes[int(box[0])], box[1])
+            // !!!!!!!!IndexError: list index out of range
             current_axis.add_patch(plt.Rectangle((box[2], box[4]), box[3]-box[2], box[5]-box[4], color='blue', fill=False, linewidth=2))
             current_axis.text(box[2], box[4], label, size='x-large', color='white', bbox={'facecolor':'blue', 'alpha':1.0})
 
